@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Exitoso</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="text-success">¡Pago Exitoso!</h1>
+        <p>Gracias por tu compra.</p>
+        <h3>Detalles de la transacción</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Orden:</strong> {{ response.buy_order }}</li>
+            <li class="list-group-item"><strong>Monto:</strong> ${{ response.amount }}</li>
+            <li class="list-group-item"><strong>Código de Autorización:</strong> {{ response.authorization_code }}</li>
+            <li class="list-group-item"><strong>Fecha de Transacción:</strong> {{ response.transaction_date }}</li>
+        </ul>
+        <a href="{% url 'index' %}" class="btn btn-primary mt-4">Volver al Inicio</a>
+    </div>
+</body>
+</html>
